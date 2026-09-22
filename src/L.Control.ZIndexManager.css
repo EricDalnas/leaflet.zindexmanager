@@ -1,0 +1,388 @@
+/*!
+ * Leaflet.ZIndexManager - CSS styles
+ * https://github.com/ericdalnas/leaflet.zindexmanager
+ */
+
+/* =========================================================
+   Toggle button
+   ========================================================= */
+
+/* The leaflet-bar class (added in JS) provides: box-shadow, border-radius,
+   background-color:#fff, border-bottom on <a> children. We only extend here. */
+
+.leaflet-control-zim .leaflet-control-zim-toggle {
+    display: block;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-decoration: none;
+    color: #555;
+    font-size: 18px;
+    font-family: sans-serif;
+    cursor: pointer;
+}
+
+.leaflet-control-zim .leaflet-control-zim-toggle:hover {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.leaflet-control-zim-open .leaflet-control-zim-toggle {
+    background-color: #e8f0fe;
+    color: #3d7bff;
+    border-bottom: 1px solid #ccc;
+}
+
+/* =========================================================
+   Panel
+   ========================================================= */
+
+.leaflet-control-zim-panel {
+    display: none;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    min-width: 240px;
+    max-width: 320px;
+    max-height: 420px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 0 0 4px 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font: 12px/1.4 Arial, Helvetica, sans-serif;
+    color: #333;
+}
+
+.leaflet-control-zim-open .leaflet-control-zim-panel {
+    display: block;
+}
+
+/* =========================================================
+   Panel header and hint
+   ========================================================= */
+
+.zim-header {
+    padding: 8px 10px 4px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #444;
+    border-bottom: 1px solid #eee;
+    background: #fafafa;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+.zim-hint {
+    padding: 4px 10px 6px;
+    font-size: 10px;
+    color: #888;
+    background: #fafafa;
+    border-bottom: 1px solid #eee;
+    margin: 0;
+}
+
+/* =========================================================
+   Pane list
+   ========================================================= */
+
+.zim-pane-list {
+    list-style: none;
+    margin: 0;
+    padding: 4px 0;
+}
+
+.zim-pane-item {
+    position: relative;
+}
+
+/* =========================================================
+   Pane row (the draggable header row)
+   ========================================================= */
+
+.zim-pane-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 8px;
+    cursor: grab;
+    user-select: none;
+    background: #f7f8fa;
+    border-bottom: 1px solid #eaeaea;
+    transition: background 0.1s;
+}
+
+.zim-pane-row:hover {
+    background: #eef1f8;
+}
+
+.zim-pane-row.zim-dragging {
+    opacity: 0.45;
+    cursor: grabbing;
+}
+
+.zim-pane-name {
+    flex: 1;
+    font-weight: 600;
+    font-size: 11.5px;
+    color: #2c3e50;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* =========================================================
+   Layer sub-list
+   ========================================================= */
+
+.zim-layer-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background: #fff;
+}
+
+/* =========================================================
+   Layer item
+   ========================================================= */
+
+.zim-layer-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 8px 4px 20px;
+    cursor: grab;
+    user-select: none;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 11px;
+    color: #444;
+    transition: background 0.1s;
+    position: relative;
+}
+
+.zim-layer-item:hover {
+    background: #f9fafb;
+}
+
+.zim-layer-item.zim-dragging {
+    opacity: 0.4;
+    cursor: grabbing;
+}
+
+.zim-layer-item.zim-nodrag {
+    cursor: default;
+}
+
+.zim-layer-item.zim-nodrag .zim-handle {
+    color: #ddd;
+    cursor: default;
+}
+
+.zim-layer-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #555;
+}
+
+/* =========================================================
+   Drag handle
+   ========================================================= */
+
+.zim-handle {
+    color: #bbb;
+    font-size: 14px;
+    cursor: grab;
+    flex-shrink: 0;
+    line-height: 1;
+    padding: 0 1px;
+}
+
+.zim-handle:hover {
+    color: #888;
+}
+
+.zim-handle-spacer {
+    display: inline-block;
+    width: 16px;
+    flex-shrink: 0;
+}
+
+/* =========================================================
+   Badges (z-index, type, count)
+   ========================================================= */
+
+.zim-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9.5px;
+    padding: 1px 5px;
+    border-radius: 10px;
+    flex-shrink: 0;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+}
+
+.zim-z-badge {
+    background: #e3eaf9;
+    color: #3a5ccc;
+}
+
+.zim-count-badge {
+    background: #eee;
+    color: #666;
+    min-width: 18px;
+}
+
+/* =========================================================
+   Editable z-index / z-index-offset field
+   ========================================================= */
+
+.zim-zfield {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 600;
+    color: #3a5ccc;
+    background: #e3eaf9;
+    padding: 1px 5px 1px 7px;
+    border-radius: 10px;
+}
+
+.zim-zfield-label {
+    letter-spacing: 0.02em;
+}
+
+.zim-zfield-input {
+    width: 46px;
+    border: none;
+    background: transparent;
+    font-size: 11px;
+    font-weight: 600;
+    color: #3a5ccc;
+    padding: 0;
+    cursor: text;
+}
+
+.zim-zfield-input:focus {
+    outline: 1px solid #3a5ccc;
+    outline-offset: 1px;
+    border-radius: 2px;
+}
+
+/* =========================================================
+   Move to top / bottom buttons
+   ========================================================= */
+
+.zim-move-buttons {
+    display: inline-flex;
+    flex-shrink: 0;
+    gap: 1px;
+    margin-left: 2px;
+}
+
+.zim-move-btn {
+    border: none;
+    background: transparent;
+    color: #999;
+    cursor: pointer;
+    font-size: 11px;
+    line-height: 1;
+    padding: 4px 5px;
+    border-radius: 3px;
+}
+
+.zim-move-btn:hover {
+    background: #e3eaf9;
+    color: #3a5ccc;
+}
+
+.zim-move-btn:active {
+    background: #d3ddf5;
+}
+
+/* Layer type badges */
+.zim-type-badge {
+    background: #e8f5e9;
+    color: #388e3c;
+}
+
+.zim-type-tile   { background: #e3f2fd; color: #1565c0; }
+.zim-type-wms    { background: #e3f2fd; color: #1565c0; }
+.zim-type-grid   { background: #e3f2fd; color: #1565c0; }
+.zim-type-marker { background: #fff3e0; color: #e65100; }
+.zim-type-polygon, .zim-type-polyline { background: #e8f5e9; color: #2e7d32; }
+.zim-type-circle { background: #f3e5f5; color: #6a1b9a; }
+.zim-type-image  { background: #fce4ec; color: #880e4f; }
+.zim-type-geojson{ background: #e0f7fa; color: #00695c; }
+.zim-type-group  { background: #fff8e1; color: #f57f17; }
+
+/* =========================================================
+   Drop indicators (inserted before/after the drop target)
+   ========================================================= */
+
+.zim-pane-item.zim-drop-before > .zim-pane-row::before,
+.zim-pane-item.zim-drop-after  > .zim-pane-row::after,
+.zim-layer-item.zim-drop-before::before,
+.zim-layer-item.zim-drop-after::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    height: 2px;
+    background: #3d7bff;
+    border-radius: 1px;
+    z-index: 10;
+}
+
+.zim-pane-item.zim-drop-before > .zim-pane-row::before { top: -1px; }
+.zim-pane-item.zim-drop-after  > .zim-pane-row::after  { bottom: -1px; }
+.zim-layer-item.zim-drop-before::before                { top: -1px; }
+.zim-layer-item.zim-drop-after::after                  { bottom: -1px; }
+
+/* Glow highlight on the drop-target item */
+.zim-pane-item.zim-drop-before > .zim-pane-row,
+.zim-pane-item.zim-drop-after  > .zim-pane-row {
+    background: #ebf0ff;
+}
+
+.zim-layer-item.zim-drop-before,
+.zim-layer-item.zim-drop-after {
+    background: #f0f5ff;
+}
+
+/* =========================================================
+   Scrollbar styling (webkit)
+   ========================================================= */
+
+.leaflet-control-zim-panel::-webkit-scrollbar {
+    width: 5px;
+}
+
+.leaflet-control-zim-panel::-webkit-scrollbar-track {
+    background: #f5f5f5;
+}
+
+.leaflet-control-zim-panel::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+}
+
+.leaflet-control-zim-panel::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
+}
+
+/* =========================================================
+   Responsive tweaks for narrow screens
+   ========================================================= */
+
+@media (max-width: 400px) {
+    .leaflet-control-zim-panel {
+        max-width: 200px;
+    }
+}

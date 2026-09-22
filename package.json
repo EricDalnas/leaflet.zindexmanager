@@ -1,0 +1,42 @@
+{
+  "name": "leaflet.zindexmanager",
+  "version": "1.0.0",
+  "description": "A Leaflet control that provides a drag-and-drop GUI for managing map pane z-indices and layer stacking order.",
+  "keywords": [
+    "leaflet",
+    "leaflet-plugin",
+    "map",
+    "z-index",
+    "layers",
+    "panes",
+    "drag-and-drop",
+    "gui",
+    "control"
+  ],
+  "homepage": "https://github.com/ericdalnas/leaflet.zindexmanager",
+  "bugs": {
+    "url": "https://github.com/ericdalnas/leaflet.zindexmanager/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ericdalnas/leaflet.zindexmanager.git"
+  },
+  "license": "MIT",
+  "author": "Eric Dalnas",
+  "main": "dist/L.Control.ZIndexManager.js",
+  "files": [
+    "dist/",
+    "src/",
+    "README.md",
+    "LICENSE"
+  ],
+  "peerDependencies": {
+    "leaflet": ">=1.0.0"
+  },
+  "devDependencies": {
+    "leaflet": "^1.9.4"
+  },
+  "scripts": {
+    "test": "echo \"No tests yet\" && exit 0"
+  }
+}
